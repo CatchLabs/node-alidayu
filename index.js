@@ -116,8 +116,9 @@ AliDayu.prototype._request = function(params, callback) {
 };
 
 AliDayu.prototype.sms = function(options, callback) {
-  var method = 'alibaba.aliqin.fc.voice.num.singlecall';
-  var params = _.merge({}, this.options, {method: method}, options);
+  var method = 'alibaba.aliqin.fc.sms.num.send';
+  var params = _.merge({}, this.options, {method: method}, options, 
+    {sms_type: 'normal'});
   params.timestamp = timestamp();
   params.sign = this._sign(params);
 
