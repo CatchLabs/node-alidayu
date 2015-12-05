@@ -1,5 +1,6 @@
 var crypto = require('crypto');
 var urllib = require('urllib');
+var rp = require('request-promise');
 var _ = require('lodash');
 
 var defaults = {
@@ -96,33 +97,31 @@ function fullEncodeURIComponent(str) {
   return rv.replace(/\%20/g,'+');
 }
 
-AliDayu.prototype._request = function(params, callback) {
+AliDayu.prototype._request = function(params) {
   for (var key in params) {
     if (typeof params[key] === 'object') {
-      params[key] = fullEncodeURIComponent(JSON.stringify(params[key]));
-    } else {
-      params[key] = fullEncodeURIComponent(params[key]);
+      params[key] = JSON.stringify(params[key]);
     }
   }
 
   var options = {
+    uri: this.gw,
     method: 'POST',
-    data: params,
-    dataType: 'json',
-    gizp: true
+    body: params,
+    json: true
   };
 
-  urllib.request(this.gw, options, callback);
+  return rp(options);
 };
 
-AliDayu.prototype.sms = function(options, callback) {
+AliDayu.prototype.sms = function(options) {
   var method = 'alibaba.aliqin.fc.sms.num.send';
   var params = _.merge({}, this.options, {method: method}, options, 
     {sms_type: 'normal'});
   params.timestamp = timestamp();
   params.sign = this._sign(params);
 
-  this._request(params, callback);
+  return this._request(params);
 };
 
 AliDayu.prototype.voice_doublecall = function() {

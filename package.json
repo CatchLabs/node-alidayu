@@ -1,6 +1,6 @@
 {
   "name": "node-alidayu-patch",
-  "version": "0.0.1",
+  "version": "0.0.2-catch-patched",
   "description": "阿里大鱼Node SDK",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "lodash": "^3.10.1",
+    "request-promise": "^1.0.2",
     "urllib": "^2.5.0"
   }
 }
