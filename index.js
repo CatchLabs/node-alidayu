@@ -106,8 +106,7 @@ AliDayu.prototype._request = function(params) {
   var options = {
     uri: this.gw,
     method: 'POST',
-    body: params,
-    json: true
+    form: params
   };
 
   return rp(options);
