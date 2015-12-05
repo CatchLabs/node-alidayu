@@ -1,5 +1,4 @@
 var crypto = require('crypto');
-var urllib = require('urllib');
 var rp = require('request-promise');
 var _ = require('lodash');
 
