@@ -1,7 +1,7 @@
 {
   "name": "node-alidayu-patch",
-  "version": "0.0.5-catch-patched",
-  "description": "阿里大鱼Node SDK",
+  "version": "0.0.6-catch-patched",
+  "description": "阿里大鱼 Node SDK",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
