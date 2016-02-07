@@ -1,6 +1,6 @@
 {
   "name": "node-alidayu-patch",
-  "version": "0.0.6-catch-patched",
+  "version": "0.0.7",
   "description": "阿里大鱼 Node SDK",
   "main": "index.js",
   "scripts": {
@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/isayme/node-alidayu",
   "devDependencies": {
-    "chai": "^3.4.1",
+    "chai":  "^3.4.1",
     "mocha": "^2.3.3"
   },
   "dependencies": {
-    "lodash": "^4.0.0",
-    "request-promise": "^1.0.2"
+    "lodash": "^4.2.1",
+    "request-promise": "^2.0.0"
   }
 }
